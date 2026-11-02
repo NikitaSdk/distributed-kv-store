@@ -1,0 +1,50 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+
+
+  - job_name: "coordinator"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - "coordinator:8000"
+
+
+  - job_name: "shard1-leader"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - "shard1-leader:8000"
+
+  - job_name: "shard1-follower1"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - "shard1-follower1:8000"
+
+  - job_name: "shard1-follower2"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - "shard1-follower2:8000"
+
+
+  - job_name: "shard2-leader"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - "shard2-leader:8000"
+
+  - job_name: "shard2-follower1"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - "shard2-follower1:8000"
+
+  - job_name: "shard2-follower2"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - "shard2-follower2:8000"
